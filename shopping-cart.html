@@ -1,0 +1,89 @@
+<!-- Réalisé par : Adam Boulisfane : BOUA76360301 -- Ayoub Oubalkass : OUBA89360001 -->
+
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>OnlineShop - Panier</title>
+</head>
+
+<body> 
+  <!-- L'entête de la page comportant le logo du site -->
+  <header>
+    <a href="./index.html">
+      <img alt="Logo du site" src="./assets/img/logo.svg" title="Accueil">
+    </a>
+
+    <!-- Le menu de navigation contenant des liens qui dirigent vers les autres pages du site -->
+    <nav>
+      <ul type="none">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="products.html">Produits</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="shopping-cart.html">Panier</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <section>
+      <div>
+        <h1>Page de commande</h1>
+      </div>
+    </section>
+
+    <section>
+
+      <fieldset>
+
+        <legend>Contact</legend>
+        <form action="">
+
+        <p>Prénom:</p>
+        <input id="firstname" name="prénom" type="text" placeholder="Jack" size="25" maxlength="40" required autofocus>
+
+        <p>Nom:</p>
+        <input id="lastname" name="nom" type="text" placeholder="Tremblay" size="25" maxlength="40" required>
+
+        <p>Adresse courriel:</p>
+        <input id="email" name="useremail" type="email" placeholder="email@hotmail.com" size="25" maxlength="75" required>
+        
+        <p>Numéro de téléphone:</p>
+        <input id="phone" name="numtel" type="tel" placeholder="(XXX) XXX-XXXX" size="25" maxlength="40" required>
+
+        </form>
+
+      </fieldset>
+
+      <fieldset>
+
+        <legend>Paiement</legend>
+        <form action="">
+
+        <p>Numéro de carte de crédit:</p>
+        <input id="creditcard" name="numéro de carte de crédit" type="text" placeholder="XXXX XXXX XXXX XXXX" size="25" maxlength="40" required>
+
+        <p>Date d'expiration de la carte:</p>
+        <input id="creditcardexpiry" name="date d'expiration de la carte" type="text" placeholder="MM/AA" size="25" maxlength="40" required>
+
+        </form>
+
+      </fieldset>
+
+      <a href="confirmation.html"><input type="submit" value="Payer"></a>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Réalisé par : Adam Boulisfane : BOUA76360301 -- Ayoub Oubalkass : OUBA89360001</p>
+  </footer>
+
+</body>
+
+</html>
