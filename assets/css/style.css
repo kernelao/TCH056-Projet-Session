@@ -1,3 +1,6 @@
+/* ----- 
+    Réinitialisation globale 
+----- */
 * {
     margin: 0;
     padding: 0;
@@ -5,14 +8,28 @@
     color: black;
 }
 
+/* ----- 
+    Rendu Responsive
+----- */
+@media (max-width: 1250px) {
+    /* Styles spécifiques pour une largeur de 1250px et moins */
+    main {
+        max-width: 95%;
+    }
+}
+
+/* ----- 
+    Corps principal 
+----- */
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* Section de l'entête */
-
+/* ----- 
+    Entête
+----- */
 header {
     background-color: #14597f;
     height: 60px;
@@ -36,10 +53,12 @@ header > div > a {
     align-items: center;
 }
 
+/* Logo du site (dans l'Entete) */
 #main-logo {
     height: 43px;
 }
 
+/* Menu de navigation (dans l'Entete) */
 nav > ul {
     list-style-type: none;
     width: 300px;
@@ -53,6 +72,7 @@ nav > ul > li > a {
     color: white;
 }
 
+/* Panier & Badge (dans l'Entete) */
 .shopping-cart {
     display: flex;
     align-items: center;
@@ -76,11 +96,13 @@ nav > ul > li > a {
 
 .actif {
     background-color: #1fb5e9;
-    padding: 15%;
+    padding: 10px 20px;
     border-radius: 4px;
 }
 
-/* Section Bas de page */
+/* ----- 
+    Footer - Section de Bas de page
+----- */
 footer {
     height: 70px;
     background-color: #eeeeee;
@@ -89,35 +111,44 @@ footer {
     border-top: 1px solid;
     border-color: #cccccc;
     margin-top: auto;
-    
 }
 
-/* Contenu de la page */
+/* ----- 
+    Contenu principal de la page
+----- */
 main {
-    width: 1200px;
+    width: 1200px; /* Permet un côté responsive */
+    /* width: 1200px; Avec width:fixe, on aura le layout voulu, mais n'est pas responsive, il casse! */
     margin: 0 auto;
     padding-right: 20px;
     padding-left: 20px;
     margin-bottom: 40px;
 }
 
+/* ----- 
+    Page d'Accueil
+----- */
+/* Image de la bannière / Background Image (dans page d'Accueil) */
 #home-img {
     float: right;
     width: 500px;
 }
 
+/* Titre h1 en contenue (dans page d'Accueil) */
 .h1PageAccueil {
     margin-top: 30px;
     display: inline-block;
     font-size: 30px;
 }
 
+/* Paragraphe en contenue (dans page d'Accueil) */
 .parPageAccueil {
     margin-top: 19px;
     font-size: 17px;
     margin-bottom: 18px;
 }
 
+/* Bouton (dans page d'Accueil) + effect avec hover */
 .btn {
     background-color: #14597f;
     border: 1px solid #0b2d3d;
@@ -126,7 +157,6 @@ main {
     text-decoration: none;
     font-size: 15px;
     padding: 8px;
-
 }
 
 .btn:hover {
@@ -134,24 +164,26 @@ main {
     transition: ease-out 0.2s;
 }
 
+/* ----- 
+    Page de tous les Produits
+----- */
 
-
-/* Page Produits */
-
-/* Barre latérale */
+/* Un conteneur pour manipuler les positions */
 .wrapPageProduit {
     display: flex;
 }
 
+/* Barre latérale à gauche (25%) */
 .barreLaterale {
     width: 25%;
     margin-top: 5px;
 }
 
-.panneauPrincipale {
-    width: 75%;
-    padding-left: 20px;
-    /* box-sizing: border-box;  Pour inculre es bordure et padding dans le calcul de la largeur */ 
+/* Section du haut dans la barre latérale gauche */
+.wrapPageProduit h2 {
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 #product-categories > button, #product-criteria > button {
@@ -178,13 +210,13 @@ main {
     background-color: #ddf2fb;
 }
 
-.wrapPageProduit h2 {
-    font-size: 15px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+/* Panneau principale à droite (75%) */
+.panneauPrincipale {
+    width: 75%;
+    padding-left: 20px;
+    /* box-sizing: border-box;  Pour inculre es bordure et padding dans le calcul de la largeur */ 
 }
 
-/* Panneau principale */
 .panneauPrincipale > h1 {
     float: left;
     margin-top: 30px;
@@ -196,6 +228,7 @@ main {
     margin-top: 30px;
 }
 
+/* Conteneur de 1 produit (dans panneau principale à droite) */
 #products-list {
     margin-top: 58px;
     display: grid;
@@ -232,19 +265,24 @@ main {
     max-width: 100%;;
 }
 
-/* Page d'un produit */
+/* ----- 
+    Page d'un seul Produit
+----- */
 #wrapUniqueProduit h1 {
     margin-top: 25px;
 }
 
+/* Conteneur globale de manipulation */
 .containerProduit {
     display: flex;
 }
 
+/* Conteneur pour l'Image du Produit */
 .leftCol {
     width: 50%;
 }
 
+/* Conteneur à droite pour le contenu (description, carac & prix...) du produit */
 .rightCol {
     width: 50%;
     margin-top: 30px;
@@ -264,6 +302,7 @@ main {
     margin-left: 45px;
 }
 
+/* Conteneur en bas pour le prix et le form de la quantité, bouton ajouter */
 .wrapFormPrix {
     margin-top: 15px;
     padding-top: 20px;
@@ -274,6 +313,7 @@ main {
     border-top: 1px dashed black;
 }
 
+/* Formulaire pour incrémenter/décrémenter la quantité voulu du produit */
 .form-control {
     border: 1px solid #999999;
     border-radius: 4px;
@@ -287,6 +327,7 @@ main {
     fill: white;
 }
 
+/* Bouton Ajouter le produit (toujours dans page Produit) */
 .btnCartPlus {
     color: white;
     background-color: #14597f;
@@ -302,7 +343,19 @@ main {
     justify-content: space-around;
 }
 
-/* Page Contact */
+/* ----- 
+    Page Contact
+----- */
+/* Conteneur pour manipuler distinctement le contenu hors de la grid */
+#wrapContactPage > h1 {
+    padding-top: 30px;
+}
+
+#wrapContactPage > p {
+    padding-top: 15px;
+}
+
+/* Conteneur display:grid pour manipuler les positions */
 .gridContactPage {
     display: grid;
     grid-template-columns: repeat(3, 33.33%);
@@ -330,16 +383,22 @@ main {
     font-style: italic;
 }
 
-#wrapContactPage > h1 {
-    padding-top: 30px;
+/* ----- 
+    Page Panier / Shopping-cart
+----- */
+/* Conteneur général pour manipuler le titre en dehors du tableau */
+.wrapShoppingCart h1 {
+    margin-top: 25px;
+    margin-bottom: 30px;
 }
 
-#wrapContactPage > p {
-    padding-top: 15px;
+.wrapShoppingCart p {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    text-align: right;
 }
 
-/* Page Panier / Shopping-cart */
-/* Style général pour le tableau */
+/* Style général pour le tableau (dans page Panier) */
 .tableauShoppingCart {
     width: 100%;
     border-collapse: collapse;
@@ -393,23 +452,15 @@ main {
     color: #4d96db;
 }
 
-.wrapShoppingCart h1 {
-    margin-top: 25px;
-    margin-bottom: 30px;
-}
-
-.wrapShoppingCart p {
-    margin-top: 15px;
-    margin-bottom: 30px;
-    text-align: right;
-}
-
+/* Conteneur pour manipuler les deux boutons en display:flex (dans page Panier) */
 .flexCartBtn {
     display: flex;
     justify-content: space-between;
 }
 
-/* Page Commande / Order */
+/* ----- 
+    Page Commande / Order
+----- */
 #sectionOrderForm h1 {
     margin-top: 30px;
     margin-bottom: 20px;
@@ -431,7 +482,6 @@ main {
   width: 48%;
   box-sizing: border-box;
 }
-
 
 #wrapOrderPremier {
   display: flex;
@@ -469,7 +519,9 @@ main {
     display: block;
 }
 
-/* Page de Confirmation */
+/* ----- 
+    Page de Confirmation
+----- */
 .wrapConfirmationPage h1 {
     margin-top: 35px;
     margin-bottom: 25px;
