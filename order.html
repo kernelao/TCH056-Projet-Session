@@ -3,23 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <title>OnlineShop - Commande</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
 <body>
-  <header>
+
+
+  <header id="main-header">
     <a href="./index.html">
       <img alt="logo" src="./assets/img/logo.svg" title="Accueil">
     </a>
-    <nav>
+    <nav id="main-nav">
       <ul>
         <li><a href="./index.html">Accueil</a></li>
         <li><a href="./products.html">Produits</a></li>
         <li><a href="./contact.html">Contact</a></li>
-        <li><a href="./shopping-cart.html">Panier</a></li>
+        <li>
+          <a class="shopping-cart" href="./shopping-cart.html" title="Panier">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+              <i class="fa fa-shopping-cart fa-stack-1x"></i>
+            </span>
+            <span class="count">3</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
-  <main>
+
+ 
+  <main id="main-content">
     <article>
       <h1>Commande</h1>
+      
       <form id="order-form" action="./confirmation.html" method="post">
         <section>
           <h2>Contact</h2>
@@ -47,8 +63,10 @@
       </form>
     </article>
   </main>
-  <footer>
+
+  <footer id="main-footer">
    <p>Par Amal Ben Abdellah</p>
   </footer>
+
 </body>
 </html>

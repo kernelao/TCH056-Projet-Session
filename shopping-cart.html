@@ -3,25 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>OnlineShop - Panier</title>
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
-  <header>
+
+ 
+  <header id="main-header">
     <a href="./index.html">
       <img alt="logo" src="./assets/img/logo.svg" title="Accueil">
     </a>
-    <nav>
+    <nav id="main-nav">
       <ul>
         <li><a href="./index.html">Accueil</a></li>
         <li><a href="./products.html">Produits</a></li>
         <li><a href="./contact.html">Contact</a></li>
-        <li><a href="./shopping-cart.html">Panier</a></li>
+        <li>
+         
+          <a class="shopping-cart" href="./shopping-cart.html" title="Panier">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x" style="color:#fff;"></i>
+              <i class="fa fa-shopping-cart fa-stack-1x" style="color:#000;"></i>
+            </span>
+            <span class="count">3</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
-  <main>
+
+  
+  <main id="main-content">
     <article>
       <h1>Panier</h1>
-      <table>
+
+      <table id="cart-table">
         <thead>
           <tr>
             <th></th>
@@ -33,35 +50,54 @@
         </thead>
         <tbody>
           <tr>
-            <td><button>X</button></td>
-            <td><a href="./product.html">Console Wii</a></td>
-            <td>199,99&thinsp;$</td>
-            <td><button>-</button> 1 <button>+</button></td>
-            <td>199,99&thinsp;$</td>
+            
+            <td><button class="btn-remove">X</button></td>
+            <td><a href="./product-wii.html">Console Wii</a></td>
+            <td>199,99&nbsp;$</td>
+            <td>
+              <button class="btn-qty">-</button>
+              1
+              <button class="btn-qty">+</button>
+            </td>
+            <td>199,99&nbsp;$</td>
           </tr>
           <tr>
-            <td><button>X</button></td>
-            <td><a href="./product.html">Manette Xbox 360</a></td>
-            <td>29,99&thinsp;$</td>
-            <td><button>-</button> 2 <button>+</button></td>
-            <td>59,98&thinsp;$</td>
+            <td><button class="btn-remove">X</button></td>
+            <td><a href="./product-xbox.html">Manette Xbox 360</a></td>
+            <td>29,99&nbsp;$</td>
+            <td>
+              <button class="btn-qty">-</button>
+              2
+              <button class="btn-qty">+</button>
+            </td>
+            <td>59,98&nbsp;$</td>
           </tr>
           <tr>
-            <td><button>X</button></td>
-            <td><a href="./product.html">Moniteur 19"</a></td>
-            <td>149,99&thinsp;$</td>
-            <td><button>-</button> 3 <button>+</button></td>
-            <td>449,97&thinsp;$</td>
+            <td><button class="btn-remove">X</button></td>
+            <td><a href="./product-monitor.html">Moniteur 19"</a></td>
+            <td>149,99&nbsp;$</td>
+            <td>
+              <button class="btn-qty">-</button>
+              3
+              <button class="btn-qty">+</button>
+            </td>
+            <td>449,97&nbsp;$</td>
           </tr>
         </tbody>
       </table>
-      <p>Total: <strong>704,94&thinsp;$</strong></p>
-      <button>Vider le panier</button>
-      <a href="./order.html">Commander</a>
+
+      <p>Total: <strong>704,94&nbsp;$</strong></p>
+
+      
+      <button id="btn-empty">Vider le panier</button>
+      <a href="./order.html" id="btn-order">Commander</a>
     </article>
   </main>
-  <footer>
+
+  
+  <footer id="main-footer">
     <p>Par Amal Ben Abdellah</p>
   </footer>
+
 </body>
 </html>

@@ -3,45 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <title>OnlineShop - Contact</title>
+ 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
-  <header>
+
+  <header id="main-header">
     <a href="./index.html">
       <img alt="logo" src="./assets/img/logo.svg" title="Accueil">
     </a>
-    <nav>
+    <nav id="main-nav">
       <ul>
         <li><a href="./index.html">Accueil</a></li>
         <li><a href="./products.html">Produits</a></li>
         <li><a href="./contact.html">Contact</a></li>
-        <li><a href="./shopping-cart.html">Panier</a></li>
+        <li>
+          <a class="shopping-cart" href="./shopping-cart.html" title="Panier">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+              <i class="fa fa-shopping-cart fa-stack-1x"></i>
+            </span>
+            <span class="count">3</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
-  <main>
-    <article>
+
+  <main id="main-content">
+    <article id="contact-page">
       <h1>Contact</h1>
       <p>Si vous souhaitez contacter <em>OnlineShop</em>, veuillez utiliser les coordonnées suivantes.</p>
-      <section>
-        <h2>Téléphone</h2>
-        <a href="tel:5143404711">(514) 340-4711</a>
-      </section>
-      <section>
-        <h2>Adresse</h2>
-        <p>
-          2900, boul. Édouard-Montpetit<br>
-          Montréal (Québec)<br>
-          H3T 1J4
-        </p>
-      </section>
-      <section>
-        <h2>Adresse courriel</h2>
-        <a href="mailto:onlineshop@etsmtl.ca">onlineshop@etsmtl.ca</a>
-      </section>
+
+      
+      <div id="contact-box">
+        <section>
+          <i class="fas fa-mobile-alt fa-3x" aria-hidden="true"></i>
+          <p>(514) 340-4711</p>
+        </section>
+        <section>
+          <i class="fas fa-map-marker-alt fa-3x" aria-hidden="true"></i>
+          <p>
+            2900, boul. Édouard-Montpetit<br>
+            Montréal (Québec)<br>
+            H3T 1J4
+          </p>
+        </section>
+        <section>
+          <i class="fas fa-envelope fa-3x" aria-hidden="true"></i>
+          <p>
+            <a href="mailto:onlineshop@etsmtl.ca">onlineshop@etsmtl.ca</a>
+          </p>
+        </section>
+      </div>
     </article>
   </main>
-  <footer>
-   <p>Par Amal Ben Abdellah</p>
+
+  <footer id="main-footer">
+    <p>Par Amal Ben Abdellah</p>
   </footer>
+
 </body>
 </html>
