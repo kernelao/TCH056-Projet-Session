@@ -1,0 +1,477 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: black;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Section de l'entête */
+
+header {
+    background-color: #14597f;
+    height: 60px;
+    border-bottom: 1px solid;
+    border-color: #0b2d3d;
+}
+
+header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+header > div > a {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+#main-logo {
+    height: 43px;
+}
+
+nav > ul {
+    list-style-type: none;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+    color: white;
+}
+
+.shopping-cart {
+    display: flex;
+    align-items: center;
+}
+
+.fa-shopping-cart {
+    color: #14597f;
+}
+
+.count {
+    display: inline-block;
+    color: white;
+    background-color: #d9534f;
+    position: relative;
+    right: 10px;
+    top: 12px;
+    border-radius: 50%;
+    width: 20px;
+    text-align: center;
+}
+
+.actif {
+    background-color: #1fb5e9;
+    padding: 15%;
+    border-radius: 4px;
+}
+
+/* Section Bas de page */
+footer {
+    height: 70px;
+    background-color: #eeeeee;
+    text-align: center;
+    align-content: center;
+    border-top: 1px solid;
+    border-color: #cccccc;
+    margin-top: auto;
+    
+}
+
+/* Contenu de la page */
+main {
+    width: 1200px;
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+#home-img {
+    float: right;
+    width: 500px;
+}
+
+.h1PageAccueil {
+    margin-top: 30px;
+    display: inline-block;
+    font-size: 30px;
+}
+
+.parPageAccueil {
+    margin-top: 19px;
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+
+.btn {
+    background-color: #14597f;
+    border: 1px solid #0b2d3d;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 8px;
+
+}
+
+.btn:hover {
+    background-color: #1fb5e9;
+    transition: ease-out 0.2s;
+}
+
+
+
+/* Page Produits */
+
+/* Barre latérale */
+.wrapPageProduit {
+    display: flex;
+}
+
+.barreLaterale {
+    width: 25%;
+    margin-top: 5px;
+}
+
+.panneauPrincipale {
+    width: 75%;
+    padding-left: 20px;
+    /* box-sizing: border-box;  Pour inculre es bordure et padding dans le calcul de la largeur */ 
+}
+
+#product-categories > button, #product-criteria > button {
+    border: 1px solid #999999;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    display: block;
+    width: 90%;
+    padding: 8px;
+    text-align: left;
+}
+
+#product-categories > button:not(:last-child), #product-criteria > button:not(:last-child) {
+    border-bottom: none;
+}
+
+#product-categories > button:hover, #product-criteria > button:hover {
+    background-color: #f3f3f3;
+    transition: ease-out 0.2s;
+}
+
+#product-categories > .selected, #product-criteria > .selected {
+    background-color: #ddf2fb;
+}
+
+.wrapPageProduit h2 {
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Panneau principale */
+.panneauPrincipale > h1 {
+    float: left;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.panneauPrincipale > p {
+    float: right;
+    margin-top: 30px;
+}
+
+#products-list {
+    margin-top: 58px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+#products-list article {
+    border: 1px solid #999999;
+    border-radius: 4px;
+    width: 100%;
+}
+
+#products-list article:hover {
+    background-color: #f3f3f3;
+    transition: ease-out 0.2s;
+}
+
+#products-list article a {
+    text-decoration: none;
+}
+
+#products-list article h2 {
+    margin: 8px;
+}
+
+#products-list article p {
+    text-align: right;
+    margin: 8px;
+}
+
+#products-list article img {
+    max-width: 100%;;
+}
+
+/* Page d'un produit */
+#wrapUniqueProduit h1 {
+    margin-top: 25px;
+}
+
+.containerProduit {
+    display: flex;
+}
+
+.leftCol {
+    width: 50%;
+}
+
+.rightCol {
+    width: 50%;
+    margin-top: 30px;
+}
+
+.rightCol h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.rightCol p {
+    text-align: justify;
+}
+
+.rightCol ul {
+    margin-left: 45px;
+}
+
+.wrapFormPrix {
+    margin-top: 15px;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    border-top: 1px dashed black;
+}
+
+.form-control {
+    border: 1px solid #999999;
+    border-radius: 4px;
+    width: 30px;
+    padding: 7px;
+    /* text-align: center; */
+}
+
+.svgCartPlus {
+    width: 12px;
+    fill: white;
+}
+
+.btnCartPlus {
+    color: white;
+    background-color: #14597f;
+    font-size: 10px;
+    border: 1px black solid;
+    border-radius: 4px;
+    padding: 7px;
+    width: 68px;
+    height: 30px;
+    /* Ajuster l'alignement */
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Page Contact */
+.gridContactPage {
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    text-align: center;
+    border: 1px #999999 solid;
+    border-radius: 4px;
+    max-width: 100%;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    margin-top: 35px;
+}
+
+.gridContactPage .fa {
+    font-size: 78px;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.gridContactPage a {
+    text-decoration: none;
+    color: #045db0;
+}
+
+.gridContactPage p {
+    font-style: italic;
+}
+
+#wrapContactPage > h1 {
+    padding-top: 30px;
+}
+
+#wrapContactPage > p {
+    padding-top: 15px;
+}
+
+/* Page Panier / Shopping-cart */
+/* Style général pour le tableau */
+.tableauShoppingCart {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+.tableauShoppingCart thead tr {
+    border-bottom: 1px solid black;
+}
+
+.tableauShoppingCart tbody tr:last-child {
+    border-bottom: 1px solid black;
+}
+
+.tableauShoppingCart td:first-child, .tableauShoppingCart th:first-child {
+    width: 30px;
+}
+
+.tableauShoppingCart th {
+    text-align: left;
+}
+
+.tableauShoppingCart th:last-child {
+    text-align: right;
+}
+  
+.tableauShoppingCart td:last-child {
+    text-align: right;
+}
+
+.tableauShoppingCart th, .tableauShoppingCart td {
+    padding: 5px;
+}
+
+.tableauShoppingCart button {
+    border: transparent;
+    border-radius: 50%;
+    background-color: #dddddd;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.tableauShoppingCart button:hover {
+    background-color: #bbbbbb;
+}
+
+.tableauShoppingCart a {
+    text-decoration: none;
+    color: #4d96db;
+}
+
+.wrapShoppingCart h1 {
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.wrapShoppingCart p {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.flexCartBtn {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Page Commande / Order */
+#sectionOrderForm h1 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+#sectionOrderForm h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.wrapPremierForm,
+.wrapDeuxiemeForm,
+.wrapTroisiemeForm,
+.wrapQuatriemeForm {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  box-sizing: border-box;
+}
+
+
+#wrapOrderPremier {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+#wrapOrderDeuxieme {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+/* Champs du formulaire */
+#order-form .form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  /* border: 1px solid #ccc; */
+  margin-bottom: 5px;
+}
+
+#order-form input {
+    box-sizing: border-box;
+}
+
+#order-form label {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+#order-form .btn {
+    margin: 0 0 0 auto;
+    display: block;
+}
+
+/* Page de Confirmation */
+.wrapConfirmationPage h1 {
+    margin-top: 35px;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
