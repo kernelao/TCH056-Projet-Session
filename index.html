@@ -3,33 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>OnlineShop - Accueil</title>
+  <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <script type="text/javascript" src="./assets/js/jquery-3.6.1.min.js"></script>
 </head>
-<body>
+<body onload="initialisation()">
   <header>
-<<<<<<< Updated upstream
-    <a href="./index.html">
-      <img alt="logo" src="./assets/img/logo.svg" title="Accueil">
-    </a>
-    <nav>
-      <ul>
-      	<li><a href="./index.html">Accueil</a></li>
-      	<li><a href="./products.html">Produits</a></li>
-      	<li><a href="./contact.html">Contact</a></li>
-      	<li><a href="./shopping-cart.html">Panier</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <article>
-      <h1>Le site n&deg;1 pour les achats en ligne!</h1>
-      <img alt="home" src="./assets/img/home.png" id="home-img">
-      <p>Découvrez nos différents produits au meilleur prix.</p>
-      <a class="btn" href="./products.html">En savoir plus</a>
-    </article>
-  </main>
-  <footer>
-   <p>Par Amal Ben Abdellah</p>
-=======
     <div class="header-container">
       <div class="logo">
         <a href="./index.html">
@@ -47,7 +26,7 @@
                 <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
                 <i class="fa fa-shopping-cart fa-stack-1x"></i>
               </span>
-              <span class="count">3</span>
+              <div id="count"><span class="count"><span id="items"></span></span></div>
             </a>
           </li>
         </ul>
@@ -64,7 +43,7 @@
   </main>
   <footer>
     <p>Par Amal Ben Abdellah</p>
->>>>>>> Stashed changes
   </footer>
+  <script type="text/javascript" src="./assets/js/panier.js"></script>
   </body>
 </html>

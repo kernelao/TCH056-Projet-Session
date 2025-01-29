@@ -3,32 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>OnlineShop - Confirmation</title>
+  <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <script type="text/javascript" src="./assets/js/jquery-3.6.1.min.js"></script>
+  <script type="text/javascript" src="./assets/js/order.js"></script>
 </head>
-<body>
-<<<<<<< Updated upstream
-<header>
-  <a href="./index.html">
-    <img alt="logo" src="./assets/img/logo.svg" title="Accueil">
-  </a>
-  <nav>
-    <ul>
-      <li><a href="./index.html">Accueil</a></li>
-      <li><a href="./products.html">Produits</a></li>
-      <li><a href="./contact.html">Contact</a></li>
-      <li><a href="./shopping-cart.html">Panier</a></li>
-    </ul>
-  </nav>
-</header>
-<main>
-  <article>
-    <h1>Votre commande est confirmée Amal Ben Abdellah!</h1>
-    <p>Votre numéro de confirmation est le <strong>00001</strong>.</p>
-  </article>
-</main>
-<footer>
-  <p>Par Amal Ben Abdellah</p>
-</footer>
-=======
+<!-- On fait appel aux fonctions qui affichent le nom du client, le numéro de la commande et qui vide le panier. -->
+<body onload="creationNom() & confirmationNumber() & viderPanier() & initialisation()">
   <header>
     <div class="header-container">
       <div class="logo">
@@ -47,7 +28,7 @@
                 <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
                 <i class="fa fa-shopping-cart fa-stack-1x"></i>
               </span>
-              <span class="count">3</span>
+              <div id="count"><span class="count"><span id="items"></span></span></div>
             </a>
           </li>
         </ul>
@@ -56,13 +37,15 @@
   </header>
   <main>
     <article>
-      <h1>Votre commande est confirmée Amal Ben Abdellah!</h1>
-      <p>Votre numéro de confirmation est le <strong>00001</strong>.</p>
+      <h1>Votre commande est confirmée <span id="name"></span>!</h1>
+      <p>Votre numéro de confirmation est le <strong><span id="confirmation-number"></span></strong>.</p>
     </article>
   </main>
   <footer>
     <p>Par Amal Ben Abdellah</p>
   </footer>
->>>>>>> Stashed changes
+    <script type="text/javascript" src="./assets/js/panier.js"></script>
+    <script type="text/javascript" src="./assets/js/confirmation.js"></script>
+    <script type="text/javascript" src="./assets/js/shopping-cart.js"></script>
 </body>
 </html>

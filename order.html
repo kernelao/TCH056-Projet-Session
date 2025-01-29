@@ -1,27 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>OnlineShop - Commande</title>
-<<<<<<< Updated upstream
-<body>
-  <header>
-    <a href="./index.html">
-      <img alt="logo" src="./assets/img/logo.svg" title="Accueil">
-    </a>
-    <nav>
-      <ul>
-        <li><a href="./index.html">Accueil</a></li>
-        <li><a href="./products.html">Produits</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-        <li><a href="./shopping-cart.html">Panier</a></li>
-      </ul>
-    </nav>
-=======
   <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
-<body>
+<body onload="initialisation()">
+  <script type="text/javascript" src="./assets/js/jquery-3.6.1.min.js"></script>
+  <script type="text/javascript" src="./assets/js/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="./assets/js/additional-methods.min.js"></script>
+  <script type="text/javascript" src="./assets/js/messages_fr.min.js"></script>
   <header>
     <div class="header-container">
       <div class="logo">
@@ -40,57 +30,31 @@
                 <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
                 <i class="fa fa-shopping-cart fa-stack-1x"></i>
               </span>
-              <span class="count">3</span>
+              <div id="count"><span class="count"><span id="items"></span></span></div>
             </a>
           </li>
         </ul>
       </nav>
     </div>
->>>>>>> Stashed changes
   </header>
   <main>
     <article>
       <h1>Commande</h1>
-<<<<<<< Updated upstream
-      <form id="order-form" action="./confirmation.html" method="post">
-        <section>
-          <h2>Contact</h2>
-          <label for="first-name">Prénom</label>
-          <input id="first-name" name="first-name" type="text" placeholder="Prénom" required>
-
-          <label for="last-name">Nom</label>
-          <input id="last-name" name="last-name" type="text" placeholder="Nom" required>
-
-          <label for="email">Adresse courriel</label>
-          <input id="email" name="email" type="email" placeholder="Adresse courriel" required>
-
-          <label for="phone">Téléphone</label>
-          <input id="phone" name="phone" type="tel" placeholder="###-###-####" required>
-        </section>
-        <section>
-          <h2>Paiement</h2>
-          <label for="credit-card">Numéro de carte de crédit</label>
-          <input id="credit-card" name="credit-card" type="text" placeholder="•••• •••• •••• ••••" required>
-
-          <label for="credit-card-expiry">Expiration (mm/aa)</label>
-          <input id="credit-card-expiry" name="credit-card-expiry" type="text" placeholder="mm/aa" required>
-        </section>
-        <button type="submit">Payer</button>
-=======
-      <form action="./confirmation.html" method="post">
+      <form id="order-form" action="./confirmation.html" onsubmit="nbOrder()"> <!-- On fait appel à la fonction qui produit le bon numéro de commande-->
         <section>
           <h2>Contact</h2>
           <div class="row">
             <div class="col">
               <div class="form-group">
                 <label for="first-name">Prénom</label>
-                <input class="form-control" type="text" id="first-name" name="first-name" placeholder="Prénom" required>
+                <!--On stocke la valeur du nom et prenom dans une variable en localStorage lorsqu'un changement est effectué dans le formulaire-->
+                <input class="form-control" type="text" id="firstname" name="firstname" placeholder="Prénom" onchange="localStorage.firstname=this.value" required>
               </div>
             </div>
             <div class="col">
               <div class="form-group">
                 <label for="last-name">Nom</label>
-                <input class="form-control" type="text" id="last-name" name="last-name" placeholder="Nom" required>
+                <input class="form-control" type="text" id="lastname" name="lastname" placeholder="Nom" onchange="localStorage.lastname=this.value" required>
               </div>
             </div>
           </div>
@@ -115,28 +79,25 @@
             <div class="col">
               <div class="form-group">
                 <label for="credit-card">Numéro de carte de crédit</label>
-                <input class="form-control" type="text" id="credit-card" name="credit-card" placeholder="•••• •••• •••• ••••" required>
+                <input class="form-control" type="text" id="creditcard" name="creditcard" placeholder="•••• •••• •••• ••••" required>
               </div>
             </div>
             <div class="col">
               <div class="form-group">
                 <label for="credit-card-expiry">Expiration (mm/aa)</label>
-                <input class="form-control" type="text" id="credit-card-expiry" name="credit-card-expiry" placeholder="mm/aa" required>
+                <input class="form-control" type="text" id="creditcardexpiry" name="creditcardexpiry" placeholder="mm/aa" required>
               </div>
             </div>
           </div>
         </section>
         <button class="btn pull-right" type="submit">Payer <i class="fa fa-angle-double-right"></i></button>
->>>>>>> Stashed changes
       </form>
     </article>
   </main>
   <footer>
-<<<<<<< Updated upstream
-   <p>Par Amal Ben Abdellah</p>
-=======
     <p>Par Amal Ben Abdellah</p>
->>>>>>> Stashed changes
   </footer>
+  <script type="text/javascript" src="./assets/js/panier.js"></script>
+  <script type="text/javascript" src="./assets/js/order.js"></script>
 </body>
 </html>

@@ -12,7 +12,8 @@
       "Stockage de 32 ou 64 Go en mémoire flash",
       "Connectivités: USB Type-C, HDMI, récepteur infrarouge",
       "Réseau: Wi-Fi (802.11a/b/g/n/ac), 10/100 Ethernet, Bluetooth, AirPlay"
-    ]
+    ],
+    "quantity": 0
   },
   {
     "id": 2,
@@ -27,7 +28,8 @@
       "Processeur d'images DIGIC 4",
       "21 millions de pixels. L'information de couleur est codée sur 14 bits",
       "Ratio image 3:2"
-    ]
+    ],
+    "quantity": 0
   },
   {
     "id": 3,
@@ -42,7 +44,8 @@
       "Vidéo full HD (1920x1080)",
       "Mise au point autofocus 39 points avec quatre modes zone AF, dont le suivi 3D",
       "Sensibilité ISO du capteur allant de 100 à 25600 ISO (position Hi2)"
-    ]
+    ],
+    "quantity": 0
   },
   {
     "id": 4,
@@ -57,7 +60,8 @@
       "Écran ACL clair et lumineux aux couleurs pures de 2,7 po pour prendre et visionner les images.",
       "Couleurs nettes et stylisées convenant à toute personnalité.",
       "Prise de vues en mode faible éclairage dans des conditions de faible luminosité."
-    ]
+    ],
+    "quantity": 0
   },
   {
     "id": 5,
@@ -72,7 +76,8 @@
       "Disque SSD de 256 Go",
       "Ports HDMI, USB et Ethernet",
       "Carte graphique NVIDIA GeForce GTX 660M"
-    ]
+    ],
+    "quantity": 0
   },
   {
     "id": 6,
@@ -87,7 +92,8 @@
       "Disque SSD de 256 Go",
       "Ports HDMI, VGA, USB, Ethernet et Firewire",
       "Construction robuste"
-    ]
+    ],
+    "quantity": 0
   },
   {
     "id": 7,
@@ -102,7 +108,8 @@
       "Disque dur de 1 To à 7 200 tr/min",
       "Processeur graphique AMD Radeon R9 M380 avec 2 Go de mémoire GDDR5",
       "Caméra FaceTime HD"
-    ]
+    ],
+    "quantity": 0
   },
   {
     "id": 8,
@@ -117,7 +124,8 @@
       "Ajustable dans plusieurs positions",
       "Écran mat limitant les reflets",
       "Garantie 2 ans"
-    ]
+    ],
+    "quantity": 0
   },
   {
     "id": 9,
@@ -132,7 +140,8 @@
       "256 Mo de mémoire principale XDR à 3.2 Ghz / 256 Mo de mémoire vidéo GDDR3 à 700 Mhz",
       "Lecteur Blu-Ray (54 Go maximum)",
       "Disque dur détachable (2 pouces et demi)"
-    ]
+    ],
+    "quantity": 0
   },
   {
     "id": 10,
@@ -146,7 +155,8 @@
       "Rapport d'image de 16:9",
       "Trois ports HDMI",
       "Intègre la technologie <em>Chromecast</em>"
-    ]
+    ],
+    "quantity": 0
   },
   {
     "id": 11,
@@ -161,7 +171,8 @@
       "Mémoire de 24 Mo de 1TSRAM + 64 Mo de 1TSRAM de MoSys Technology",
       "Lecteur DVD Panasonic Matsushita Electronic",
       "2 Prises USB 2.0, Sortie Vidéo/Audio YUV et Sortie RVB"
-    ]
+    ],
+    "quantity": 0
   },
   {
     "id": 12,
@@ -176,7 +187,8 @@
       "8 Go de RAM DDR3 à 68,3 Go/s",
       "Lecteur Blu-ray",
       "Disque dur 500 Go"
-    ]
+    ],
+    "quantity": 0
   },
   {
     "id": 13,
@@ -189,6 +201,8 @@
       "Manette sans fil 2.4GHz avec adapteur USB",
       "Compacte et ergonomique",
       "Port pour casque d'écoute pour Xbox Live"
-    ]
+    ],
+    "quantity": 0
+    
   }
 ]
