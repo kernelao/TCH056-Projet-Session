@@ -44,10 +44,37 @@ $(document).ready(function () {
 // Fonction qui permet de stocker en localStorage la variable qui correspond au numéro
 // de la commande. Ce chiffre augmente si le formulaire est valide donc seulement lorsque
 // le "paiement" est effectué.
-function nbOrder(){
-    
+// Fonction pour gérer le numéro de commande
+function nbOrder() {
+    // Vérification et génération du numéro de commande
+    var currentOrderNumber = localStorage.getItem("nbOrder");
 
- //  à Compléter
-     //  .......
+    // Initialisation ou incrémentation du numéro de commande
+    if (!currentOrderNumber) {
+        currentOrderNumber = 1;
+    } else {
+        currentOrderNumber = parseInt(currentOrderNumber) + 1;
+    }
 
-  }
+    // Formatage du numéro de commande en 5 chiffres (ex : 00001, 00002)
+    var formattedOrderNumber = String(currentOrderNumber).padStart(5, '0');
+
+    // Enregistrement du numéro formaté avec la clé attendue
+    localStorage.setItem("nbOrder", formattedOrderNumber);
+
+    // Enregistrement du prénom et nom dans `localStorage`
+    var firstname = $('#firstname').val();
+    var lastname = $('#lastname').val();
+    localStorage.setItem("firstname", firstname);
+    localStorage.setItem("lastname", lastname);
+
+    // Suppression des items du panier
+    localStorage.setItem("panier", 0);
+    localStorage.removeItem("cart");
+
+    // Retourne true pour permettre la soumission du formulaire
+    return true;
+}
+
+
+

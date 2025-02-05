@@ -190,9 +190,29 @@ function sortAscendingName(property) {
 
 // Completer cette fonction qui  permet de diminuer la quantité d'un produit de 1 lorsqu'on clique sur le bouton associé à la réduction du nombre d'item.
 function diminuerQuantite(idProduit) {
-    
-// à compléter
+    // Trouver l'élément correspondant dans le panier
+    let produit = cart.find(item => item.id == idProduit);
+
+    if (produit) {
+        // Vérifier si la quantité est supérieure à 1
+        if (produit.quantity > 1) {
+            produit.quantity -= 1; // Réduire la quantité de 1
+        } else {
+            // Si la quantité atteint 1 et que l'utilisateur clique, le produit est retiré
+            enleverProduitCart(idProduit);
+            return; // Stopper ici pour éviter une mise à jour inutile
+        }
+    }
+
+    // Mettre à jour le localStorage avec le panier modifié
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Mettre à jour le badge et l'affichage
+    panierAJour();
+    validateShoppingCart();
+    conditionDisabled(); // Désactiver le bouton "-" si la quantité est égale à 1
 }
+
 
 // Cette fonction permet d'augmenter la quantité d'un produit de 1 en appuyant sur le bouton d'ajout.
 function augmenterQuantite(idProduit) {

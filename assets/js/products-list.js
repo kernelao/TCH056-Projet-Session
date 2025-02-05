@@ -1,121 +1,117 @@
-
-// Ce script prépare la page d'affichage des différents produits et permet
-// de trier les produits selon différentes catégories sélectionnées à l'aide de boutons.
-
 // Requête au serveur pour les données products.json
 var xhr = new XMLHttpRequest();
 xhr.onload = function () {
   if (xhr.status === 200) {
-    products = JSON.parse(xhr.responseText); // Importer les données JSON dans la variable "products"
+    var products = JSON.parse(xhr.responseText); // Importer les données JSON dans la variable "products"
 
-    // Fonction qui génère le contenu de la page des produits à partir d'une liste de produits ordonnées
     function generateProductsHTML(productsList) {
-
       var pageContent = '';
 
       for (var i = 0; i < productsList.length; i++) {
+        var product = productsList[i];
 
-     //  à Compléter
+        // Création d'un div pour chaque produit avec lien vers sa page individuelle
+        pageContent += `<div class="product">`;
+        pageContent += `<a href="./product.html?id=${product.id}" title="${product.name}">`;
+        pageContent += `<h3 style="margin:0;">${product.name}</h3>`;
+        pageContent += `<img src="./assets/img/${product.image}" alt="${product.name}" />`;
+        pageContent += `<p class="price">${product.price.toFixed(2)} $</p>`;
+        pageContent += `</a>`;
+        pageContent += `</div>`;
 
-      //  pageContent += '<div class="product">'
-      //  .....
-      //.....
-
-      //  pageContent += '</div>'
+        
       }
 
+      // Afficher la liste et le nombre de produits
       document.getElementById('products-list').innerHTML = pageContent;
       document.getElementById('products-count').innerHTML = productsList.length + ' produits';
+    }
 
-    };
-
-    // Fonction pour classer en ordre croissant les prix.
-    // Adapté de: https://stackoverflow.com/questions/12900058/how-can-i-sort-a-javascript-array-of-objects-numerically-and-then-alphabetically
     function sortAscending(property) {
-      
+      return function (a, b) {
+        return (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+      };
+    }
 
-     //  à Compléter
-    };
-
-    // Fonction pour classer en ordre décroissant les prix.
-    // Adapté de: https://stackoverflow.com/questions/12900058/how-can-i-sort-a-javascript-array-of-objects-numerically-and-then-alphabetically
     function sortDescending(property) {
       return function (a, b) {
         return (a[property] > b[property]) ? -1 : (a[property] < b[property]) ? 1 : 0;
-      }
-    };
+      };
+    }
 
-    // Fonction pour classer en ordre croissant les noms des produits.
-    // Adapté de: https://stackoverflow.com/questions/12900058/how-can-i-sort-a-javascript-array-of-objects-numerically-and-then-alphabetically
     function sortAscendingName(property) {
-      
-     //  à Compléter
-    };
+      return function (a, b) {
+        return a[property].localeCompare(b[property]);
+      };
+    }
 
-    // Fonction pour classer en ordre décroissant les noms des produits.
-    // Adapté de: https://stackoverflow.com/questions/12900058/how-can-i-sort-a-javascript-array-of-objects-numerically-and-then-alphabetically
     function sortDescendingName(property) {
-      
-     //  à Compléter
-    };
+      return function (a, b) {
+        return b[property].localeCompare(a[property]);
+      };
+    }
 
-    // Initialisation de la page HTML avec les paramètres sélectionnée par défaut ("Tous les produits" + "Prix (bas-haut)")
-    var refreshedProductList = []
-    refreshedProductList = products // Tous les produits
-    refreshedProductList.sort(sortAscending("price")) // Prix (bas-haut)
-    generateProductsHTML(refreshedProductList) // Générer la page initiale
+    // Initialisation de la page HTML avec les paramètres sélectionnés par défaut
+    var refreshedProductList = products;
+    refreshedProductList.sort(sortAscending("price"));
+    generateProductsHTML(refreshedProductList);
 
-
-    // Fonction pour la mise à jour des paramètres de classement après le clic d'un bouton
+    
     function productsFiltering() {
-
-      // Initialisation des paramètres initiaux
-      var productCategory = "all"
-      var productCriteria = "priceAscending"
+      var productCategory = "all";
+      var productCriteria = "priceAscending";
 
       // Mise à jour de la classe ".selected" au clic d'un bouton de catégorie
       $('#product-categories button').click(function () {
-        $('#product-categories button').removeClass('selected')
-        $(this).addClass('selected')
-        productCategory = String($(this).attr("id"))
-      })
+        $('#product-categories button').removeClass('selected');
+        $(this).addClass('selected');
+        productCategory = $(this).attr("id");
 
-      // Mise à jour de la classe ".selected" au clic d'un bouton de classement
-      
-     //  à Compléter
-     //  .......
+        // Filtrer les produits selon la catégorie
+        if (productCategory === 'all') {
+          refreshedProductList = products;
+        } else {
+          refreshedProductList = products.filter(item => item.category === productCategory);
+        }
 
-      // Au clic d'un bouton, mettre à jour les produits affichés en fonction des critères sélectionnés
-      $('button').click(function () {
+        // Trier les produits en fonction du critère sélectionné
+        if (productCriteria === "priceAscending") {
+          refreshedProductList.sort(sortAscending("price"));
+        } else if (productCriteria === "priceDescending") {
+          refreshedProductList.sort(sortDescending("price"));
+        } else if (productCriteria === "nameAscending") {
+          refreshedProductList.sort(sortAscendingName("name"));
+        } else if (productCriteria === "nameDescending") {
+          refreshedProductList.sort(sortDescendingName("name"));
+        }
 
-        if (productCategory == 'computers') {
-          refreshedProductList = products.filter(item => { return item.category == 'computers' });
-        } else if (productCategory == "cameras") {
-          refreshedProductList = products.filter(item => { return item.category == 'cameras' });
-        //
-        } 
-       //  à Compléter
-     //  .......
-
-
-
-
-        if (productCriteria == "nameAscending") {
-          refreshedProductList = refreshedProductList.sort(sortAscendingName("name"));
-        } else if (productCriteria == "nameDescending") {
-          refreshedProductList = refreshedProductList.sort(sortDescendingName("name"));
-        
-
-     //  à Compléter
-     //  .......
-
-
-        // Afficher les produits selon le nouveau classement déterminé
+        // Générer et afficher les produits triés
         generateProductsHTML(refreshedProductList);
       });
-    };
-    productsFiltering();
 
+      // Mise à jour de la classe ".selected" au clic d'un bouton de classement
+      $('#product-criteria button').click(function () {
+        $('#product-criteria button').removeClass('selected');
+        $(this).addClass('selected');
+        productCriteria = $(this).attr("id");
+
+        // Trier les produits selon le critère sélectionné
+        if (productCriteria === "priceAscending") {
+          refreshedProductList.sort(sortAscending("price"));
+        } else if (productCriteria === "priceDescending") {
+          refreshedProductList.sort(sortDescending("price"));
+        } else if (productCriteria === "nameAscending") {
+          refreshedProductList.sort(sortAscendingName("name"));
+        } else if (productCriteria === "nameDescending") {
+          refreshedProductList.sort(sortDescendingName("name"));
+        }
+
+        // Générer et afficher les produits triés
+        generateProductsHTML(refreshedProductList);
+      });
+    }
+
+    productsFiltering();
   }
 };
 
