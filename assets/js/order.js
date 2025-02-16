@@ -45,9 +45,14 @@ $(document).ready(function () {
 // de la commande. Ce chiffre augmente si le formulaire est valide donc seulement lorsque
 // le "paiement" est effectué.
 function nbOrder(){
-    
-
- //  à Compléter
-     //  .......
-
+    var numero = localStorage.getItem("nbOrder");
+    if($( "#order-form" ).valid() == true){
+    if (numero!=null){
+      numero = parseInt(numero);
+    } else{
+      numero = 1;
+    }
+    numero++;
+    localStorage.setItem("nbOrder", numero);
+    }
   }

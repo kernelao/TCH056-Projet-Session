@@ -1,4 +1,6 @@
 
+<!-- On redirige vers l'inde du site si on essaie d'avoir une accès direct -->
+<?php if (!isset($controleur)) header("Location: ..\index.php"); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,34 +16,20 @@
   <script type="text/javascript" src="./assets/js/messages_fr.min.js"></script>
   <header>
     <div class="header-container">
-      <div class="logo">
-        <a href="./index.html">
-          <img alt="logo" src="./assets/img/logo.svg" title="Accueil">
-        </a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="./index.html">Accueil</a></li>
-          <li><a href="./products.html">Produits</a></li>
-          <li><a href="./contact.html">Contact</a></li>
-          <li>
-            <a class="shopping-cart" href="./shopping-cart.html" title="Panier">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-                <i class="fa fa-shopping-cart fa-stack-1x"></i>
-              </span>
-              <div id="count"><span class="count"><span id="items"></span></span></div>
-            </a>
-          </li>
-        </ul>
-      </nav>
+    <?php
+				include ("vues/inclusions/entete.inc.php");
+        include("vues/inclusions/fonctions.inc.php");
+        afficherMenu($controleur);
+			?>
     </div>
   </header>
   <main>
     <article>
       <h1>Commande</h1>
-      <form id="order-form" action="./confirmation.html" onsubmit="nbOrder()"> <!-- On fait appel à la fonction qui produit le bon numéro de commande-->
-        <section>
+ <!-- On fait appel à la fonction qui produit le bon numéro de commande-->
+      <form id="order-form" action="./index.php?action=confirmation" method="POST" onsubmit="nbOrder()">
+  
+      <section>
           <h2>Contact</h2>
           <div class="row">
             <div class="col">
@@ -95,7 +83,9 @@
     </article>
   </main>
   <footer>
-    <p>Par Amal Ben Abdellah</p>
+  <?php
+				include ("vues/inclusions/pied.inc.php");
+			?>
   </footer>
   <script type="text/javascript" src="./assets/js/panier.js"></script>
   <script type="text/javascript" src="./assets/js/order.js"></script>

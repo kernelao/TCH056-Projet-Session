@@ -1,3 +1,5 @@
+<!-- On redirige vers l'inde du site si on essaie d'avoir une accès direct -->
+<?php if (!isset($controleur)) header("Location: ..\index.php"); ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -12,27 +14,11 @@
 <body onload="initialisation()">
   <header>
     <div class="header-container">
-      <div class="logo">
-        <a href="./index.html">
-          <img alt="logo" src="./assets/img/logo.svg" title="Accueil">
-        </a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="./index.html">Accueil</a></li>
-          <li class="active"><a href="./products.html">Produits</a></li>
-          <li><a href="./contact.html">Contact</a></li>
-          <li>
-            <a class="shopping-cart" href="./shopping-cart.html" title="Panier">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-                <i class="fa fa-shopping-cart fa-stack-1x"></i>
-              </span>
-              <div id="count"><span class="count"><span id="items"></span></span></div>
-            </a>
-          </li>
-        </ul>
-      </nav>
+    <?php
+				include ("vues/inclusions/entete.inc.php");
+        include("vues/inclusions/fonctions.inc.php");
+        afficherMenu($controleur);
+			?>
     </div>
   </header>
   <main>
@@ -43,7 +29,9 @@
     <div id="cartAlert">Le produit a été ajouté au panier.</div>
   </main>
   <footer>
-    <p>Par Amal Ben Abdellah</p>
+  <?php
+				include ("vues/inclusions/pied.inc.php");
+			?>
   </footer>
   <script type="text/javascript" src="./assets/js/product.js"></script>
   <script type="text/javascript" src="./assets/js/panier.js"></script>
