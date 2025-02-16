@@ -3,7 +3,6 @@
 //Inclusion de la manufacture de contrôleur (qui importe déjà tous les contrôleurs)
 include_once "controleurs/manufacturecontroleur.class.php";
 
-//Obtenir le bon contrôleur
 //Si la requête contenant le paramètre action n'est pas renseignée
 if(!ISSET($_GET['action'])){
     // On met "accueil" comme valeur par défaut
