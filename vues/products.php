@@ -128,6 +128,7 @@
       <!-- Liste des produits -->
       <div class="products" id="products-list">
         <?php
+          // ==================== Utilisation des fonctions d'affichage ===================== 
           if (!empty($controleur->tabProduits)) {
               afficherProduitsHTML($controleur->tabProduits);
           } else {
