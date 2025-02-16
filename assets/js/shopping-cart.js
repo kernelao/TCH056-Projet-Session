@@ -117,7 +117,9 @@ function generateShoppingCartHTML(cart) {
     for (var i = 0; i < cart.length; i++) {
         pageContent += '<tr>'
         pageContent += '<td><button title="Supprimer" onclick="enleverProduitCart(' + cart[i].id + ')"><i class="fa fa-times"></i></button></td>'
-        pageContent += '<td><a href="./product.html?id=' + cart[i].id + '">' + cart[i].name + '</a></td>'
+
+        pageContent += '<td><a href="?action=choisirProduit&id=' + cart[i].id + '">' + cart[i].name + '</a></td>';
+
         pageContent += '<td>' + cart[i].price + '&thinsp;$</td>'
         pageContent += '<td>'
         pageContent += '<div class="row">'
@@ -137,7 +139,7 @@ function generateShoppingCartHTML(cart) {
     pageContent += '</tbody>'
     pageContent += '</table>'
     pageContent += '<p class="shopping-cart-total">Total: <strong>' + prixTotal(JSON.parse(localStorage.getItem("cart"))).toFixed(2) + '&thinsp;$</strong></p>'
-    pageContent += '<a class="btn pull-right" href="./order.html">Commander <i class="fa fa-angle-double-right"></i></a>'
+    pageContent += '<a class="btn pull-right" href="?action=commande">Commander <i class="fa fa-angle-double-right"></i></a>'
     pageContent += '<button class="btn" id="remove-all-items-button" onclick="suppression()"><i class="fa fa-trash-o"></i>&nbsp; Vider le panier</button>'
 
 
@@ -188,10 +190,26 @@ function sortAscendingName(property) {
     }
 }
 
-// Completer cette fonction qui  permet de diminuer la quantité d'un produit de 1 lorsqu'on clique sur le bouton associé à la réduction du nombre d'item.
+// Cette fonction permet de diminuer la quantité d'un produit de 1 lorsqu'on clique sur le bouton associé à la réduction du nombre d'item.
 function diminuerQuantite(idProduit) {
-    
-// à compléter
+    conditionDisabled(idProduit);
+    for (var produit of cart) {
+        if (produit.id == idProduit) {
+            produit.quantity -= 1;
+            localStorage.setItem("cart", JSON.stringify(cart));
+            var sommeItems = 0;
+            for (var i = 0; i < JSON.parse(localStorage.getItem("cart")).length; i++) {
+
+                nbItem = JSON.parse(localStorage.getItem("cart"))[i].quantity;
+                sommeItems += nbItem
+            }
+            localStorage.setItem("panier", sommeItems);
+
+        }
+        panierAJour();
+    }
+    validateShoppingCart();
+    conditionDisabled();
 }
 
 // Cette fonction permet d'augmenter la quantité d'un produit de 1 en appuyant sur le bouton d'ajout.
